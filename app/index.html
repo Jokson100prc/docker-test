@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Request & Respond</title>
+  </head>
+
+  <body>
+    <h2>The XMLHttpRequest Object</h2>
+
+    <button type="button" onclick="loadDoc()">Request data</button>
+
+    <p id="demo"></p>
+
+    <button type="button" onclick="getDoc()">GET</button>
+
+    <p id="demo"></p>
+
+    <script>
+      function loadDoc() {
+        // ('https://cors-anywhere.herokuapp.com/http://localhost:9200/jok/_search'
+        fetch("/elastic/jok/_search", {
+          method: "POST",
+          body: JSON.stringify({
+            query: {
+              match_all: {},
+            },
+          }),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        })
+          .then(function (response) {
+            if (response.ok) {
+              return response.json();
+            }
+            return Promise.reject(response);
+          })
+          .then(function (data) {
+            console.log(data);
+          })
+          .catch(function (error) {
+            console.warn("Something went wrong.", error);
+          });
+      }
+    </script>
+  </body>
+</html>
