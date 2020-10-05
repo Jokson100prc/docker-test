@@ -38,24 +38,3 @@ function loadDoc() {
             console.warn("Something went wrong.", error);
         });
 }
-
-// function getDoc() {
-//   fetch("/elastic/jok/_search", {
-//     method: "Get",
-//     headers: {
-//       "Content-type": "application/json; charset=UTF-8",
-//     },
-//   })
-//     .then(function (response) {
-//       if (response.ok) {
-//         return response.stringify();
-//       }
-//       return Promise.reject(response);
-//     })
-//     .then(function (data) {
-//       console.log(data);
-//     })
-//     .catch(function (error) {
-//       console.warn("Something went wrong.", error);
-//     });
-// }
