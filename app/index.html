@@ -12,13 +12,20 @@
   </head>
 
   <body>
+    <form id="addFormValue" method="POST">
+      <label for="adres"
+        ><input placeholder="adres" type="text" name="adres" id="address"
+      /></label>
+      <label for="wiek"
+        ><input placeholder="wiek" type="number" name="wiek" id="age"
+      /></label>
+      <input type="button" id="add" value="Push" />
+    </form>
     <h2>The Fetch</h2>
 
     <button type="button" onclick="loadDoc()">Request data</button>
 
     <table id="example" class="display" width="100%"></table>
-
-    <!-- <button type="button" onclick="getDoc()">GET</button> -->
 
     <!-- *** jQuery *** -->
     <script
@@ -32,11 +39,8 @@
       charset="utf8"
       src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"
     ></script>
-    <!-- *** JS -->
-    <script src="js.js"></script>
 
-    <!-- <header></header>
-    <section></section> -->
-    <!-- <script src="temp.js"></script> -->
+    <!-- *** JS -->
+    <script src="fetch.js"></script>
   </body>
 </html>
